@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevoHub | Home</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="../style/resets.css" />
+    <link rel="stylesheet" href="../style/nav.css" />
+    <link rel="stylesheet" href="../style/home.css" />
+
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-firestore.js"></script>
+  </head>
+  <body>
+    <div class="header-nav">
+      <div class="nav-left">
+        <span class="material-symbols-outlined menu"> menu </span>
+        <div class="logo">
+          <span class="text">DevoHub</span>
+        </div>
+      </div>
+      <label class="search-bar" for="search-box">
+        <span class="material-symbols-outlined"> search </span>
+        <input type="text" id="search-box" placeholder="Search" />
+      </label>
+      <div class="nav-right">
+        <div class="theme-toggle-wrapper">
+          <div class="theme-toggle">
+            <div class="circle"></div>
+            <span class="material-symbols-outlined icon moon"> dark_mode </span>
+            <span class="material-symbols-outlined icon sun"> light_mode </span>
+          </div>
+        </div>
+        <div class="nav-user-icon online" onclick="settingsMenuToggle()">
+          <img src="../assets/bg-3.jpg" />
+        </div>
+      </div>
+    </div>
+
+    <div class="setting-menu">
+      <div class="setting-menu-inner">
+        <div class="user-profile">
+          <img src="../assets/bg-3.jpg" />
+          <div>
+            <p>7he_sachin</p>
+            <a href="profile.html">See your profile</a>
+          </div>
+        </div>
+        <div class="user-profile feedback">
+          <span class="material-symbols-outlined"> reviews </span>
+          <div>
+            <p>Give Feedback</p>
+            <a href="feedback.html">Help us to improve new design</a>
+          </div>
+        </div>
+
+        <div class="setting-links">
+          <span class="material-symbols-outlined"> settings </span>
+          <a href="setting.html"
+            >Setting & Theme
+            <span class="material-symbols-outlined"> chevron_right </span></a
+          >
+        </div>
+        <div class="setting-links">
+          <span class="material-symbols-outlined">contact_support</span>
+          <a href="help.html"
+            >Help & Support
+            <span class="material-symbols-outlined"> chevron_right </span></a
+          >
+        </div>
+        <div class="setting-links">
+          <span class="material-symbols-outlined"> groups_3 </span>
+          <a href="about-us.html"
+            >About us<span class="material-symbols-outlined">
+              chevron_right
+            </span></a
+          >
+        </div>
+        <div class="setting-links">
+          <span class="material-symbols-outlined"> logout </span>
+          <a href="log-out.html"
+            >Log-out
+            <span class="material-symbols-outlined"> chevron_right </span></a
+          >
+        </div>
+      </div>
+    </div>
+
+    <aside>
+      <span class="material-symbols-outlined close-menu"> close </span>
+      <!-- <div class="logo"><span class="text">DevoHub</span></div> -->
+      <nav class="nav-links">
+        <a href="home.html" class="nav-link active">
+          <span class="material-symbols-outlined"> home </span>
+          <h4>Home</h4>
+        </a>
+        <a href="people.html" class="nav-link">
+          <span class="material-symbols-outlined"> groups_3 </span>
+          <h4>People</h4>
+        </a>
+        <a href="git-hunter.html" class="nav-link">
+          <span class="material-symbols-outlined"> person_search </span>
+          <h4>Git-Hunter</h4>
+        </a>
+        <a href="forums.html" class="nav-link">
+          <span class="material-symbols-outlined"> forum </span>
+          <h4>Forums</h4>
+        </a>
+        <a href="search.html" class="nav-link">
+          <span class="material-symbols-outlined">search</span>
+          <h4>Search</h4>
+        </a>
+        <a href="help.html" class="nav-link">
+          <span class="material-symbols-outlined">contact_support</span>
+          <h4>Help</h4>
+        </a>
+        <a href="setting.html" class="nav-link">
+          <span class="material-symbols-outlined"> settings </span>
+          <h4>Setting</h4>
+        </a>
+        <a href="profile.html" class="nav-link">
+          <span class="material-symbols-outlined"> account_circle </span>
+          <h4>You</h4>
+        </a>
+        <a href="log-out.html" class="nav-link">
+          <span class="material-symbols-outlined"> logout </span>
+          <h4>Log-out</h4>
+        </a>
+      </nav>
+    </aside>
+
+    <main>
+      <div class="left">
+        <div class="story-gallery">
+          <div class="story add">
+            <img src="images/upload.png" />
+            <p>Post story</p>
+          </div>
+          <div class="story story2">
+            <img src="images/member-1.png" />
+            <p>Raw</p>
+          </div>
+          <div class="story story3">
+            <img src="images/member-2.png" />
+            <p>Willam</p>
+          </div>
+          <div class="story story4">
+            <img src="images/member-3.png" />
+            <p>Kane</p>
+          </div>
+          <div class="story story5">
+            <img src="images/member-4.png" />
+            <p>Jack</p>
+          </div>
+          <div class="story story2">
+            <img src="images/member-1.png" />
+            <p>Raw</p>
+          </div>
+          <div class="story story3">
+            <img src="images/member-2.png" />
+            <p>Willam</p>
+          </div>
+          <div class="story story4">
+            <img src="images/member-3.png" />
+            <p>Kane</p>
+          </div>
+          <div class="story story5">
+            <img src="images/member-4.png" />
+            <p>Jack</p>
+          </div>
+        </div>
+
+        <div class="category-bar">
+          <div class="category active">Trending</div>
+          <div class="category">Websites</div>
+          <div class="category">AI</div>
+          <div class="category">Fun</div>
+          <div class="category">Data Science</div>
+          <div class="category">Data Science</div>
+          <div class="category">Data Science</div>
+          <div class="category">Data Science</div>
+        </div>
+
+        <div class="posts">
+          <div class="post-container">
+            <div class="top-row">
+              <div class="user-profile">
+                <img src="images/profile-pic.png" />
+                <h3>Raunak Tiwari</h3>
+              </div>
+              <div class="category">Websites</div>
+            </div>
+            <img src="images/feed-image-1.png" alt="post" />
+            <div class="down-row">
+              <h4 class="title">
+                Namaste! This is the title of the first post!
+              </h4>
+              <div class="likes">
+                <span class="material-symbols-outlined"> favorite </span>38
+              </div>
+            </div>
+          </div>
+          <div class="post-container">
+            <div class="top-row">
+              <div class="user-profile">
+                <img src="images/member-3.png" />
+                <h3>Sachin</h3>
+              </div>
+              <div class="category">Data Science</div>
+            </div>
+            <img src="images/feed-image-2.png" alt="post" />
+            <div class="down-row">
+              <h4 class="title">
+                Namaste! This is the title of the first post on Data Science!
+              </h4>
+              <div class="likes">
+                <span class="material-symbols-outlined"> favorite </span>53
+              </div>
+            </div>
+          </div>
+          <div class="post-container">
+            <div class="top-row">
+              <div class="user-profile">
+                <img src="images/member-8.png" />
+                <h3>Derick</h3>
+              </div>
+              <div class="category">AI</div>
+            </div>
+            <img src="images/feed-image-5.png" alt="post" />
+            <div class="down-row">
+              <h4 class="title">This is the title</h4>
+              <div class="likes">
+                <span class="material-symbols-outlined"> favorite </span>42
+              </div>
+            </div>
+          </div>
+          <div class="post-container">
+            <div class="top-row">
+              <div class="user-profile">
+                <img src="images/profile-pic.png" />
+                <h3>Raunak Tiwari</h3>
+              </div>
+              <div class="category">Websites</div>
+            </div>
+            <img src="images/feed-image-1.png" alt="post" />
+            <div class="down-row">
+              <h4 class="title">
+                Namaste! This is the title of the first post!
+              </h4>
+              <div class="likes">
+                <span class="material-symbols-outlined"> favorite </span>38
+              </div>
+            </div>
+          </div>
+          <div class="post-container">
+            <div class="top-row">
+              <div class="user-profile">
+                <img src="images/member-3.png" />
+                <h3>Sachin</h3>
+              </div>
+              <div class="category">Data Science</div>
+            </div>
+            <img src="images/feed-image-2.png" alt="post" />
+            <div class="down-row">
+              <h4 class="title">
+                Namaste! This is the title of the first post on Data Science!
+              </h4>
+              <div class="likes">
+                <span class="material-symbols-outlined"> favorite </span>53
+              </div>
+            </div>
+          </div>
+          <div class="post-container">
+            <div class="top-row">
+              <div class="user-profile">
+                <img src="images/member-8.png" />
+                <h3>Derick</h3>
+              </div>
+              <div class="category">AI</div>
+            </div>
+            <img src="images/feed-image-5.png" alt="post" />
+            <div class="down-row">
+              <h4 class="title">This is the title</h4>
+              <div class="likes">
+                <span class="material-symbols-outlined"> favorite </span>42
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right">
+        <h2>Create Post</h2>
+        <div class="write-post-container">
+          <div class="user-profile">
+            <img src="images/member-3.png" />
+            <h4>7he_sachin</h4>
+          </div>
+
+          <div class="post-input-container">
+            <input
+              type="text"
+              class="input-field"
+              id="post-title"
+              placeholder="Title of post"
+            />
+            <label for="post-image" class="input-field">
+              <!-- <img src="https://placehold.co/200x100" alt="Upload Image"> -->
+              <h3>Upload image</h3>
+            </label>
+            <input
+              type="file"
+              id="post-image"
+              style="visibility: hidden"
+              onchange=""
+            />
+            <input
+              list="categories"
+              class="input-field"
+              id="post-category"
+              placeholder="Post category"
+            />
+            <datalist id="categories">
+              <option value="Websites"></option>
+              <option value="AI"></option>
+              <option value="Mobile Apps"></option>
+              <option value="Data Science"></option>
+              <option value="Other"></option>
+            </datalist>
+
+            <textarea
+              class="input-field"
+              rows="3"
+              placeholder="Provide us description of the post."
+            ></textarea>
+            <input type="button" value="Upload" />
+          </div>
+        </div>
+
+        <h2>Advertisements</h2>
+        <div class="ad-box">
+          <img src="images/advertisement.png" alt="" />
+        </div>
+      </div>
+    </main>
+
+    <script src="../js/firebase-config.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="../js/home.js"></script>
+  </body>
+</html>
